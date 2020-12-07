@@ -1,6 +1,6 @@
 {{ friendModel | json }}
 
-<form #formName="ngForm" action="" method="post" novalidate>
+<form #formName="ngForm" action="" method="post" novalidate (ngSubmit)="submit()">
   <label for="firstName">First name</label><br>
   <input pattern="^[a-zA-Z\s]*$" [class.error]="firstName.invalid && firstName.touched" [class.noError]="firstName.valid" #firstName="ngModel" [(ngModel)]="friendModel.firstName" name="firstName" type="text" id="firstName" required ><br>
   <span [ngClass]="firstName.invalid && firstName.touched ? 'show' : 'hide'">Only charracters from a-z and spaces alloud</span><br>

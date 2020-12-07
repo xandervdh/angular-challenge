@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormsModule } from "@angular/forms";
-import { Friend } from "./friend";
+import { FormsModule } from '@angular/forms';
+import { Friend } from './friend';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +9,9 @@ import { Friend } from "./friend";
 })
 export class AppComponent {
   languages = ['HTML', 'CSS'];
-  friendModel = new Friend("", "", "", 0, null)
+  friendModel = new Friend('', '', '', 0, null);
+
+  public submit(): void{
+    console.log(this.friendModel);
+    }
 }
