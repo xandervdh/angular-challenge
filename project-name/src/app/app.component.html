@@ -1,13 +1,13 @@
 {{ friendModel | json }}
 
-<form #formName="ngForm" action="" method="post">
+<form #formName="ngForm" action="" method="post" novalidate>
   <label for="firstName">First name</label><br>
-  <input pattern="^[A-Za-z]+$" [class.error]="firstName.invalid && firstName.touched" [class.noError]="firstName.valid" #firstName="ngModel" [(ngModel)]="friendModel.firstName" name="firstName" type="text" id="firstName" required ><br>
-  <span [ngClass]="firstName.invalid && firstName.touched ? 'show' : 'hide'">Only charracters from a-z alloud</span><br>
+  <input pattern="^[a-zA-Z\s]*$" [class.error]="firstName.invalid && firstName.touched" [class.noError]="firstName.valid" #firstName="ngModel" [(ngModel)]="friendModel.firstName" name="firstName" type="text" id="firstName" required ><br>
+  <span [ngClass]="firstName.invalid && firstName.touched ? 'show' : 'hide'">Only charracters from a-z and spaces alloud</span><br>
 
   <label for="lastName">Last name</label><br>
-  <input pattern="^[A-Za-z]+$" [class.error]="lastName.invalid && lastName.touched" [class.noError]="lastName.valid" #lastName="ngModel" [(ngModel)]="friendModel.lastName" name="lastName" type="text" id="lastName" required><br>
-  <span [ngClass]="lastName.invalid && lastName.touched ? 'show' : 'hide'">Only charracters from a-z alloud</span><br>
+  <input pattern="^[a-zA-Z\s]*$" [class.error]="lastName.invalid && lastName.touched" [class.noError]="lastName.valid" #lastName="ngModel" [(ngModel)]="friendModel.lastName" name="lastName" type="text" id="lastName" required><br>
+  <span [ngClass]="lastName.invalid && lastName.touched ? 'show' : 'hide'">Only charracters from a-z znd spaces alloud</span><br>
 
   <label for="email">Email</label><br>
   <input pattern="[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}" [class.error]="email.invalid && email.touched" [class.noError]="email.valid" #email="ngModel" [(ngModel)]="friendModel.email" name="email" type="email" id="email" required><br>
@@ -23,7 +23,7 @@
   </select><br>
   <span [ngClass]="language.invalid && language.touched ? 'show' : 'hide'">Choose a language</span><br>
 
-  <button>Submit</button>
+  <button [disabled]="formName.form.invalid">Submit</button>
 </form>
 
 <router-outlet></router-outlet>
