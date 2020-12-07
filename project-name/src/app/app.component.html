@@ -11,17 +11,17 @@
 
   <label for="email">Email</label><br>
   <input pattern="[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}" [class.error]="email.invalid && email.touched" [class.noError]="email.valid" #email="ngModel" [(ngModel)]="friendModel.email" name="email" type="email" id="email" required><br>
-  <span [ngClass]="email.invalid && email.touched ? 'show' : 'hide'">Only charracters from a-z alloud</span><br>
+  <span [ngClass]="email.invalid && email.touched ? 'show' : 'hide'">No valid email</span><br>
 
   <label for="phoneNumber">Phone number</label><br>
   <input pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" [class.error]="phoneNumber.invalid && phoneNumber.touched" [class.noError]="phoneNumber.valid" #phoneNumber="ngModel" [(ngModel)]="friendModel.phoneNumber" name="phoneNumber" type="text" id="phoneNumber" required><br>
-  <span [ngClass]="phoneNumber.invalid && phoneNumber.touched ? 'show' : 'hide'">Only charracters from a-z alloud</span><br>
+  <span [ngClass]="phoneNumber.invalid && phoneNumber.touched ? 'show' : 'hide'">No valid phone number</span><br>
 
   <label for="favouriteLanguages">Favourite languages</label><br>
   <select [class.error]="language.invalid && language.touched" [class.noError]="language.valid" #language="ngModel" [(ngModel)]="friendModel.languages" name="favouriteLanguages" id="favouriteLanguages" required>
     <option *ngFor="let language of languages">{{ language }}</option>
   </select><br>
-  <span [ngClass]="language.invalid && language.touched ? 'show' : 'hide'">Only charracters from a-z alloud</span><br>
+  <span [ngClass]="language.invalid && language.touched ? 'show' : 'hide'">Choose a language</span><br>
 
   <button>Submit</button>
 </form>
