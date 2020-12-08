@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   languages = ['HTML', 'CSS'];
   friendModel = new Friend('', '', '', 0, null);
   private addFriendService: AddFriendService;
-  private allFriends: any;
+  public allFriends: any;
 
   constructor(addFriendService: AddFriendService) {
     this.addFriendService = addFriendService;
