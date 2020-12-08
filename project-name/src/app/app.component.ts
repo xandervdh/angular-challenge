@@ -10,8 +10,8 @@ import {OnInit} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  languages = ['HTML', 'CSS'];
-  friendModel = new Friend('', '', '', 0, null);
+  languages = ['HTML', 'CSS', 'PHP', 'Javascript', 'Phyton', 'Java'];
+  friendModel = new Friend(null, null, null, null, null);
   private addFriendService: AddFriendService;
   public allFriends: any;
 

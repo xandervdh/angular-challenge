@@ -1,15 +1,24 @@
+select {
+  width: 240px;
+  height: 34px;
+}
+
+input {
+  width: 220px;
+}
+
 .error {
   border: 1px solid red;
   border-radius: 5px;
   width: 240px;
-  height: 30px;
+  height: 34px;
 }
 
 .noError {
   border: 1px solid lawngreen;
   border-radius: 5px;
   width: 240px;
-  height: 30px;
+  height: 34px;
 }
 
  .hide {
